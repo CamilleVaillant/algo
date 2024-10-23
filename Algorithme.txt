@@ -364,3 +364,180 @@ DEBUT_ALGORITHME
 			AFFICHER x
 			FIN_SI
 FIN_ALGORITHME
+
+shi fu mi)
+
+FONCTIONS_UTILISEES
+
+VARIABLES
+x EST_DU_TYPE NOMBRE
+y EST_DU_TYPE NOMBRE
+
+gameover EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+							x PREND_LA_VALEUR ALGOBOX_ALEA_ENT(1,3)
+		gameover PREND_LA_VALEUR 1
+	
+	AFFICHER "faite votre choix avec la ligne y: pierre = 1; feuille = 2 ou ciseaux = 3"
+	TANT_QUE (gameover==1) FAIRE
+			DEBUT_TANT_QUE
+
+			
+LIRE y
+				
+	SI (x==1 ET y==2 OU x==2 ET y==3 ou x==3 ET y==1) ALORS
+				DEBUT_SI
+				AFFICHER* "VICTOIRE"
+				AFFICHER "votre choix: "
+				AFFICHER y
+				SI (y==1) ALORS
+					DEBUT_SI
+					AFFICHER "=pierre"
+					FIN_SI
+					SINON
+						DEBUT_SINON
+						SI (y==2) ALORS
+							DEBUT_SI
+							AFFICHER "=feuille"
+							FIN_SI
+							SINON
+								DEBUT_SINON
+								AFFICHER "=ciseaux"
+								FIN_SINON
+						FIN_SINON
+				AFFICHER "  /  choix de l'IA: "
+				AFFICHER x
+				 SI (x==1) ALORS
+					DEBUT_SI
+					AFFICHER "=pierre"
+					FIN_SI
+					SINON
+						DEBUT_SINON
+						SI (x==2) ALORS
+							DEBUT_SI
+							AFFICHER "=feuille"
+							FIN_SI
+							SINON
+								DEBUT_SINON
+								AFFICHER "=ciseaux"
+								FIN_SINON
+						FIN_SINON
+				gameover PREND_LA_VALEUR 0
+				FIN_SI
+				SINON
+					DEBUT_SINON
+					SI (x==1 ET y==3 OU x==2 ET y==1 OU x==3 ET y==2) ALORS
+						DEBUT_SI
+						AFFICHER* "DEFAITE"
+						AFFICHER "votre choix: "
+						AFFICHER y
+						SI (y==1) ALORS
+					DEBUT_SI
+					AFFICHER "=pierre"
+					FIN_SI
+					SINON
+						DEBUT_SINON
+						SI (y==2) ALORS
+							DEBUT_SI
+							AFFICHER "=feuille"
+							FIN_SI
+							SINON
+								DEBUT_SINON
+								AFFICHER "=ciseaux"
+								FIN_SINON
+						FIN_SINON
+						AFFICHER "  /  choix de l'IA: "
+						AFFICHER x
+						SI (x==1) ALORS
+					DEBUT_SI
+					AFFICHER " =pierre"
+					FIN_SI
+					SINON
+						DEBUT_SINON
+						SI (x==2) ALORS
+							DEBUT_SI
+							AFFICHER "=feuille"
+							FIN_SI
+							SINON
+								DEBUT_SINON
+								AFFICHER "=ciseaux"
+								FIN_SINON
+						FIN_SINON
+						gameover PREND_LA_VALEUR 0		
+						FIN_SI
+						SINON
+							DEBUT_SINON
+							SI (x==y) ALORS
+								DEBUT_SI
+								AFFICHER "egalité"
+								x PREND_LA_VALEUR ALGOBOX_ALEA_ENT(1,3)
+								FIN_SI
+								SINON
+									DEBUT_SINON
+									SI (y>3) ALORS
+										DEBUT_SI
+										AFFICHER "veuillez choisir 1, 2 ou 3"
+										FIN_SI
+									FIN_SINON
+							FIN_SINON
+					FIN_SINON
+		
+	FIN_TANT_QUE	
+FIN_ALGORITHME
+
+
+jeux des batonnets
+
+FONCTIONS_UTILISEES
+
+VARIABLES
+joueur1 EST_DU_TYPE NOMBRE
+joueur2 EST_DU_TYPE NOMBRE
+plateau EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+	POUR plateau ALLANT_DE 1 A 16
+		DEBUT_POUR
+		plateau PREND_LA_VALEUR 16
+		AFFICHER* plateau
+	
+			
+		
+		
+		TANT_QUE (plateau!=1) FAIRE
+			DEBUT_TANT_QUE
+			
+			
+			
+		LIRE joueur1
+			SI (joueur1 == 1 OU joueur1 == 2 OU joueur1 == 3) ALORS
+				DEBUT_SI
+				plateau PREND_LA_VALEUR (plateau - joueur1)
+				FIN_SI
+				SINON
+					DEBUT_SINON
+					SI (joueur1>3) ALORS
+						DEBUT_SI
+					
+						AFFICHER* "veuillez choisir 1, 2 ou 3"
+						LIRE joueur1
+						FIN_SI
+					FIN_SINON
+			AFFICHER* plateau	
+			LIRE joueur2
+			
+			SI (joueur2 == 1 OU joueur2 == 2 OU joueur2 == 3) ALORS
+				DEBUT_SI
+				plateau PREND_LA_VALEUR (plateau - joueur2)
+				FIN_SI
+				SINON
+					DEBUT_SINON
+					SI (joueur2>3) ALORS
+						DEBUT_SI
+						AFFICHER* "veuillez choisir 1, 2 ou 3"
+						lire joueur2
+						FIN_SI
+					FIN_SINON
+			AFFICHER* plateau	
+			FIN_TANT_QUE
+		FIN_POUR 
+FIN_ALGORITHME
